@@ -19,7 +19,7 @@ A simple YouTube clone built with HTML, CSS, and Bootstrap.
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/youtube-clone.git
+    git clone https://github.com/Abhishekshirsath0/youtube-clone.git
     ```
 
 2. Open `index.html` in your browser to view the project.
