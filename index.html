@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YouTube</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/x-icon" href="/icons/youtube premium.png">
+
+    <style>
+      /* Custom styles */
+      body {
+        background-color: #0f0f0f;
+      }
+
+      .navbar {
+        background-color: #0f0f0f;
+        margin-top: 0 auto;
+        margin-left: 0px;
+        padding-bottom: -20px;
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+      }
+
+      .container-fluid {
+        height: 40px;
+      }
+      #menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2px;
+        height: 30px;
+        width: 30px;
+        border-radius: 30px;
+        background-color: #0f0f0f;
+        margin-top: -5px;
+        margin-left: 10px;
+      }
+
+      #menu:hover {
+        background-color: #3b3a3a;
+        cursor: pointer;
+      }
+      .navbar-brand {
+        display: flex;
+        margin-right: 250px;
+        margin-top: -10px;
+      }
+      #IN {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0f0f0f;
+        color: #a9b6c0;
+        border-radius: 20px;
+        margin-top: 15px;
+        position: absolute;
+        margin-left: 95px;
+        height: 20px;
+        width: 20px;
+        font-size: 10px;
+      }
+
+      #search {
+        display: flex;
+        align-items: center;
+        width: 88vh;
+        margin-right: 470px;
+      }
+      .form-control {
+        background-color: #0f0f0f;
+        border-color: #272727;
+        width: 10px;
+        padding: 8px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+
+      .form-control::placeholder {
+        color: #767977;
+        opacity: 1;
+        padding-left: 12px;
+      }
+      .input-group-text {
+        border-style: solid;
+        border-radius: 0%;
+        background-color: #201f1f;
+        border-color: #222222;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width: 70px;
+        height: 41.5px;
+        padding-left: 20px;
+      }
+      .input-group-text:hover {
+        cursor: pointer;
+      }
+      .sup {
+        color: #ffffff;
+        font-size: 10px;
+        margin-left: 130px;
+        position: relative;
+        margin-top: -60px;
+      }
+      .mic {
+        display: flex;
+        justify-content: center;
+        padding-top: 9px;
+        background-color: #272727;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        margin-left: 10px;
+        position: absolute;
+        padding: auto;
+        left: 620px;
+        top: 1px;
+        z-index: 1;
+      }
+      .mic:hover {
+        background-color: #3b3a3a;
+        cursor: pointer;
+      }
+
+      .VBP {
+        display: flex;
+        margin-top: -15px;
+        position: absolute;
+        padding-left: 295px;
+      }
+
+      #add-video {
+        display: flex;
+        justify-content: center;
+        border-radius: 40px;
+        height: 40px;
+        width: 40px;
+        margin-right: 25px;
+        padding-top: 8px;
+        padding-left: 2px;
+        margin-top: -7px;
+      }
+      #add-video:hover {
+        background-color: #272727;
+        cursor: pointer;
+      }
+      #bell {
+        display: flex;
+        justify-content: center;
+        border-radius: 40px;
+        height: 40px;
+        width: 40px;
+        padding-top: 8px;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-top: -7px;
+      }
+      #bell:hover {
+        cursor: pointer;
+        background-color: #272727;
+      }
+
+      .profile img {
+        display: flex;
+        justify-content: center;
+        border-radius: 33px;
+        height: 33px;
+        width: 33px;
+        padding-top: 2px;
+        margin-top: -5px;
+        margin-left: 20px;
+        z-index: 1;
+      }
+
+      .profile:hover {
+        cursor: pointer;
+      }
+      .side-bar {
+        padding-top: 60px;
+      }
+      .side-bar-links {
+        color: #ffffff;
+        margin-left: 17px;
+        width: 10px;
+        margin-top: 20px;
+      }
+      .sidebar-tabs {
+        display: flex;
+        padding-left: 10px;
+        margin-top: 1px;
+        margin-left: 15px;
+        font-size: 15px;
+        width: 180px;
+      }
+      .sidebar-tabs:hover {
+        display: flex;
+
+        justify-content: start;
+        background-color: #343434;
+        border-radius: 10px;
+        padding-left: 10px;
+        white-space: nowrap;
+      }
+      .hr {
+        color: #ffffff;
+        width: 250px;
+        position: relative;
+        margin-top: 5px;
+      }
+      .YOU {
+        font-size: 15px;
+        margin-left: -20px;
+      }
+      .subscription {
+        border-radius: 25px;
+        height: 25px;
+        width: 25px;
+      }
+      .blue-dot {
+        display: flex;
+        background-color: #3b9ef2;
+        border-radius: 4px;
+        height: 4px;
+        width: 4px;
+        margin-top: -10px;
+        margin-left: 190px;
+      }
+      .about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        width: 300px;
+        height: 300px;
+      }
+      .button-row {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        padding: auto;
+        height: 40px;
+        margin-top: -1751px;
+        margin-left: 270px;
+        background-color: #0f0f0f;
+        z-index: 1;
+      }
+      .button-style {
+        display: flex;
+        padding: 1%;
+        justify-content: center;
+        align-items: center;
+        border-style: none;
+        border-radius: 10px;
+        height: 30px;
+        margin-left: 10px;
+        background-color: #272727;
+        white-space: nowrap;
+        color: #ffffff;
+      }
+      .button-style:hover {
+        background-color: #3b3a3a;
+      }
+
+      #All {
+        display: flex;
+        padding: 1%;
+        justify-content: center;
+        align-items: center;
+        border-style: none;
+        border-radius: 10px;
+        height: 30px;
+        margin-left: 10px;
+        background-color: #ffffff;
+        white-space: nowrap;
+      }
+
+      #mainframe {
+        position: relative;
+        display: flex;
+        color: white;
+        background-color: #0f0f0f;
+        column-gap: 20px;
+        width: 1230px;
+        height: 200px;
+      }
+      .col {
+        position: relative;
+        background-color:#343434;
+        height: 100%;
+        border-radius: 20px;
+      }
+      .column {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 270px;
+        margin-top: 30px;
+        border-radius: 100px;
+        white-space: nowrap;
+      }
+    
+      .container img {
+        position: relative;
+        height: 200px;
+        width: 400px;
+        border-radius: 20px;
+        margin-left: -12px;
+        margin-right: -24px;
+      }
+      .container img:hover {
+        cursor: pointer;
+        border-radius: 1px;
+      }
+      .main-channel img {
+        height: 40px;
+        width: 40px;
+        border-radius: 40px;
+        margin-top: 10px;
+      }
+      .main-channel img:hover {
+        border-style: none;
+        border-radius: 30px;
+      }
+      .main-channel a {
+        display: flex;
+        text-decoration: none;
+        color: #ffffff;
+        margin-left: 35px;
+        margin-top: -35px;
+        white-space: nowrap;
+      }
+      .three-dots img {
+        display: flex;
+        height: 20px;
+        width: 20px;
+        margin-top: -100px;
+        margin-left: 360px;
+        border-radius: 20px;
+      }
+      .channel-name a {
+        display: flex;
+        text-decoration: none;
+        margin-left: 35px;
+        margin-top: -12px;
+        font-size: 14px;
+        color: #8b8b8b;
+      }
+      .views a {
+        display: flex;
+        text-decoration: none;
+        margin-left: 35px;
+        margin-top: 1px;
+        font-size: 14px;
+        color: #8b8b8b;
+      }
+      .views a sup {
+        margin-top: 16px;
+        margin-left: 5px;
+        font-size: 30px;
+        letter-spacing: 4px;
+      }
+
+      #banner {
+        margin-top: -112%;
+      }
+      .videos {
+        margin: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg" style="color: #e3f2fd">
+      <div class="container-fluid">
+        <div id="menu">
+          <img src="./icons/menu.png" alt="menu" height="18" />
+        </div>
+        <div>
+          <a class="navbar-brand" href="#">
+            <img src="./img/logo.png" alt="logo" height="70" />
+            <div id="IN">IN</div>
+          </a>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="search" class="input-group mb-3 mt-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search"
+            aria-describedby="basic-addon2"
+          />
+          <div class="input-group-append">
+            <div>
+              <span class="input-group-text" id="basic-addon2"
+                ><img src="/icons/search.png" />
+              </span>
+            </div>
+          </div>
+          <div>
+            <div class="mic">
+              <img src="/icons/mic.png" height="20px" />
+            </div>
+
+            <div class="VBP">
+              <div id="add-video">
+                <img src="/icons/add-video.png" height="20px" width="20px" />
+              </div>
+
+              <div id="bell">
+                <img src="/icons/Bell.png" height="20px" width="20px" />
+              </div>
+
+              <div class="profile">
+                <img src="icons/lambo.jpg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!------side bar-------->
+
+    <div id="sidebar-div">
+      <div class="side-bar">
+        <div class="sidebar-tabs">
+          <p>
+            <img src="icons/home.png" height="20px" width="20px" />
+            <span class="side-bar-links"> Home</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/youtube-shorts.png" height="20px" width="20px" />
+            <span class="side-bar-links"> shorts</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/subscription.png" height="20px" width="20px" />
+            <span class="side-bar-links">Subscription</span>
+          </p>
+        </div>
+        <hr class="hr" />
+        <div class="sidebar-tabs">
+          <p class="YOU">
+            <span class="side-bar-links"> You > </span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/your channel.png" height="20px" width="20px" />
+            <span class="side-bar-links"> Your channel</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/history.png" height="20px" width="20px" />
+            <span class="side-bar-links"> Histoy</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/play-list.png" height="20px" width="20px" />
+            <span class="side-bar-links"> playlist</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/your video.png" height="20px" width="20px" />
+            <span class="side-bar-links"> Your videos</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/watch later.png" height="20px" width="20px" />
+            <span class="side-bar-links"> Watch later</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/like.png" height="20px" width="20px" />
+            <span class="side-bar-links"> Liked videos</span>
+          </p>
+        </div>
+        <hr class="hr" />
+        <div class="sidebar-tabs">
+          <p class="YOU">
+            <span class="side-bar-links"> subscriptins </span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/neeraj walia" class="subscription" />
+            <span class="side-bar-links"> neeraj walia</span>
+            <span class="blue-dot"></span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/L-Earn.jpg" class="subscription" />
+            <span class="side-bar-links">L-Earn</span>
+            <span class="blue-dot"></span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/New Indian Era.jpg" class="subscription" />
+            <span class="side-bar-links"> New Indian Era</span>
+            <span class="blue-dot"></span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/great ideas.jpg" class="subscription" />
+            <span class="side-bar-links">great idea </span>
+            <span class="blue-dot"></span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/RG LECTURES.jpg" class="subscription" />
+            <span class="side-bar-links"> RG LECTURES</span>
+            <span class="blue-dot"></span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/LearnOpediA.jpg" class="subscription" />
+            <span class="side-bar-links"> LearnOpediA</span>
+            <span class="blue-dot"></span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/Leap Gaming.jpg" class="subscription" />
+            <span class="side-bar-links"> Leap Gaming</span>
+            <span class="blue-dot"></span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/down-arrow.png" class="subscription" />
+            <span class="side-bar-links"> show more</span>
+          </p>
+        </div>
+        <hr class="hr" />
+        <div class="sidebar-tabs">
+          <p class="YOU">
+            <span class="side-bar-links"> Explore </span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/trending.png" class="subscription" />
+            <span class="side-bar-links"> Trending</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/shopping.png" class="subscription" />
+            <span class="side-bar-links"> Shopping</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/music.png" class="subscription" />
+            <span class="side-bar-links"> Music</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/film.png" class="subscription" />
+            <span class="side-bar-links"> Film</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/live.png" class="subscription" />
+            <span class="side-bar-links">Live</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/Gaming.png" class="subscription" />
+            <span class="side-bar-links"> Gaming</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/news.png" class="subscription" />
+            <span class="side-bar-links"> News</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/sports.png" class="subscription" />
+            <span class="side-bar-links">Sport</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/course.png" class="subscription" />
+            <span class="side-bar-links"> Cource</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/Fashion.png" class="subscription" />
+            <span class="side-bar-links">Fashions & beauty</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/Podcast.png" class="subscription" />
+            <span class="side-bar-links"> Podcasts</span>
+          </p>
+        </div>
+        <hr class="hr" />
+        <div class="sidebar-tabs">
+          <p class="YOU">
+            <span class="side-bar-links">More from YouTube</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/youtube premium.png" class="subscription" />
+            <span class="side-bar-links"> YouTube Premium</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/Youtube studio.png" class="subscription" />
+            <span class="side-bar-links"> YouTube studio</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/youtube-music.png" class="subscription" />
+            <span class="side-bar-links"> YouTube Music</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/youtube-kids.png" class="subscription" />
+            <span class="side-bar-links"> YouTube Kids</span>
+          </p>
+        </div>
+        <hr class="hr" />
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/settings.png" class="subscription" />
+            <span class="side-bar-links"> Settings</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/report history.png" class="subscription" />
+            <span class="side-bar-links">Report History</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/send Feedback.png" class="subscription" />
+            <span class="side-bar-links">Send Feedback</span>
+          </p>
+        </div>
+        <div class="sidebar-tabs">
+          <p>
+            <img src="/icons/Help.png" class="subscription" />
+            <span class="side-bar-links"> Help</span>
+          </p>
+        </div>
+        <div><hr class="hr" /></div>
+      </div>
+    </div>
+
+    <!-----buttons row------>
+    <div>
+      <div class="button-row">
+        <button id="All">All</button>
+        <button class="button-style">Music</button>
+        <button class="button-style">Mixes</button>
+        <button class="button-style">Lo-fi</button>
+        <button class="button-style">Alka Yagnik</button>
+        <button class="button-style">Jaani</button>
+        <button class="button-style">Indian pop music</button>
+        <button class="button-style">DJ mix</button>
+        <button class="button-style">Web Development</button>
+        <button class="button-style">Ajay-Atul</button>
+        <button class="button-style">Arijit singh</button>
+        <button class="button-style">Shreya Ghoshal</button>
+      </div>
+    </div>
+
+    <!------side bar------->
+    <!-- Main frame -->
+
+    <div id="banner">
+      <div class="column">
+        <div id="mainframe">
+          <div class="col">
+            <div class="container">
+              <img src="/mainfrem/mainfrem--1.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-2.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-3.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="videos">
+      <div class="column">
+        <div id="mainframe">
+          <div class="col">
+            <div class="container">
+              <img src="/mainfrem/main-4.png"/>
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-5.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-6.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="videos">
+      <div class="column">
+        <div id="mainframe">
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-7.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-8.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-9.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="videos">
+      <div class="column">
+        <div id="mainframe">
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-10.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-11.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-12.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="videos">
+      <div class="column">
+        <div id="mainframe">
+          <div class="col">
+            <div class="container">
+              <img src="/mainfrem/mainfrem--1.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-2.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-2.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="videos">
+      <div class="column">
+        <div id="mainframe">
+          <div class="col">
+            <div class="container">
+              <img src="/mainfrem/mainfrem--1.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-2.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-2.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="videos">
+      <div class="column">
+        <div id="mainframe">
+          <div class="col">
+            <div class="container">
+              <img src="/mainfrem/mainfrem--1.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-2.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="container">
+              <img src="mainfrem/main-2.png" />
+              <div class="main-channel">
+                <img src="/mainfrem/mainfrem.jpg" />
+                <p>
+                  <a href=""
+                    >Tujha Upkara Jagi Tod Nahi | Vithu Mauli <br />Tu Mauli
+                    Jagachi Lyrics In Marathi | Sahil...</a
+                  >
+                </p>
+              </div>
+
+              <div class="channel">
+                <div class="channel-name"><a href="">SLOWED AND REVERB</a></div>
+                <div class="views">
+                  <a href="">1.7M views <sup>.</sup> 1 year ago</a>
+                </div>
+              </div>
+
+              <div class="three-dots"><img src="/icons/three-dots.png" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your content here -->
+  </body>
+</html>
